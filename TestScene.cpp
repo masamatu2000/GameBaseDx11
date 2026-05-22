@@ -2,6 +2,7 @@
 #include"Engine/Input.h"
 #include"Engine/SceneManager.h"
 #include"Engine/Image.h"
+
 //コンストラクタ
 TestScene::TestScene(GameObject * parent)
 	: GameObject(parent, "TestScene"),hTitlePic_(-1)
@@ -11,8 +12,10 @@ TestScene::TestScene(GameObject * parent)
 //初期化
 void TestScene::Initialize()
 {
+
 	hTitlePic_ = Image::Load("../Assets/Title.png");
 	assert(hTitlePic_ >-1);
+	
 }
 
 //更新
