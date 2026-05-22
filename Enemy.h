@@ -19,8 +19,9 @@ public:
 
 	//開放
 	void Release() override;
+	void OnCollision(GameObject* pTarget) override;
 private:
 	int hModel_;
-	Transform tr_;//アフィン変換のパラメータを保存
+	Transform tr_;//アフィン変換のパラメータを保
 };
 

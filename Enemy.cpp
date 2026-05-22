@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include"Engine/Model.h"
 #include"Engine/SphereCollider.h"
+#include"Bullet.h"
 Enemy::Enemy(GameObject* parent)
 	:GameObject(parent,"Enemy"),hModel_(-1)
 {
@@ -38,4 +39,12 @@ void Enemy::Draw()
 
 void Enemy::Release()
 {
+}
+
+void Enemy::OnCollision(GameObject* pTarget)
+{
+	if (pTarget->GetObjectName() == "Bullet") {
+		pTarget->KillMe();
+		KillMe();
+	}
 }

@@ -132,7 +132,7 @@ public:
 
 
 	//各アクセス関数
-	XMFLOAT3 GetPosition() { return transform_.position_; }
+ 	XMFLOAT3 GetPosition() { return transform_.position_; }
 	XMFLOAT3 GetRotate() { return transform_.rotate_; }
 	XMFLOAT3 GetScale() { return transform_.scale_; }
 	XMFLOAT3 GetWorldPosition() { return Transform::Float3Add(GetParent()->transform_.position_ , transform_.position_); }

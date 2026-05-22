@@ -1,7 +1,7 @@
 #include "Bullet.h"
 #include"Engine/Model.h"
 #include"Player.h"
-#include"Engine/SphereCollider.h"
+#include"Enemy.h"
 Bullet::Bullet(GameObject* parent)
 	:GameObject(parent, "Bullet"), hModel_(-1),speed(0.5f)
 {
@@ -20,8 +20,12 @@ void Bullet::Initialize()
 void Bullet::Update()
 {
 	transform_.position_.z += speed;
+	GameObject* e = FindObject("Enemy");
 	if (transform_.position_.z > 50.0f) {
-		KillMe();
+		if (e != nullptr) {
+			e->OnCollision(this);
+		}
+		//KillMe();
 	}
 }
 
