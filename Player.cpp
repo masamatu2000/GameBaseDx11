@@ -27,6 +27,7 @@ void Player::Update()
 		Bullet *pb=Instantiate<Bullet>(this->GetParent());
 		pb->SetPosition(transform_.position_);
 	}
+	
 }
 
 void Player::Draw()

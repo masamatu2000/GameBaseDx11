@@ -5,6 +5,7 @@
 #include"Bullet.h"
 #include"Enemy.h"
 #include"Engine/SceneManager.h"
+#include"Engine/Camera.h"
 //コンストラクタ
 //引数：parent  親オブジェクト（SceneManager）
 //メンバー変数の初期化はコンストラクタで
@@ -14,12 +15,13 @@ PlayScene::PlayScene(GameObject* parent) :GameObject(parent, "PlayScene"), hMode
 
 void PlayScene::Initialize()
 {
-	
 	Instantiate<Player>(this);
 	//Instantiate<Bullet>(this);
-	for (int i = 0;i < 15;i++) {
+	for (int i = 0;i < 5;i++) {
 		Instantiate<Enemy>(this);
 	}
+	Camera::SetPosition(XMFLOAT3(0.0f, 4.0f, -10.0f));
+	Camera::SetTarget(XMFLOAT3(0.0f, 2.0f, 0.0f));
 }
 
 void PlayScene::Update()
